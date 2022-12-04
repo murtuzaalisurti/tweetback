@@ -35,8 +35,10 @@ module.exports = async function(data) {
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>${data.metadata.username}’s Twitter Archive${titleTweetNumberStr}</title>
+		<title>${metadata.homeLabel}’s Twitter Archive${titleTweetNumberStr}</title>
 		<meta name="description" content="A read-only indieweb self-hosted archive of${ data.pagination && data.pagination.hrefs && data.pagination.hrefs.length ? ` all ${data.pagination.hrefs.length}` : ""} of ${data.metadata.username}’s tweets." />
+		<meta property="og:image" content="${metadata.ogImage}" />
+		<meta property="og:description" content="A read-only indieweb self-hosted archive of${ data.pagination && data.pagination.hrefs && data.pagination.hrefs.length ? ` all ${data.pagination.hrefs.length}` : ""} of ${data.metadata.username}’s tweets." />
 		<script>
 		if("classList" in document.documentElement) {
 			document.documentElement.classList.add("has-js");
